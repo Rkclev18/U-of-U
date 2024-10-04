@@ -1,9 +1,16 @@
 <?php
-  $day_number       = 340;                // Assignment by Value
-  $days_to_new_year = 366 - $day_number;  // Assignment by Expression
+  $a1 = "WILLIAM";
+  $a2 = "henry";
+  $a3 = "gatES";
 
-  if ($days_to_new_year < 30)             // Condition
+  echo $a1 . " " . $a2 . " " . $a3 . "<br>";
+  fix_names($a1, $a2, $a3);
+  echo $a1 . " " . $a2 . " " . $a3;
+
+  function fix_names(&$n1, &$n2, &$n3)
   {
-    echo "Not long now till new year";    // Statement
+    $n1 = ucfirst(strtolower($n1));
+    $n2 = ucfirst(strtolower($n2));
+    $n3 = ucfirst(strtolower($n3));
   }
 ?>

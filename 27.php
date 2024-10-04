@@ -1,3 +1,9 @@
 <?php
-  $enough = $fuel <= 1 ? FALSE : TRUE;
+  class User
+  {
+    final function copyright()
+    {
+      echo "This class was written by Joe Smith";
+    }
+  }
 ?>

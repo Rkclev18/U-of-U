@@ -1,7 +1,17 @@
 <?php
-  if ($bank_balance < 100)
+  Translate::lookup();
+  
+  class Translate
   {
-    $money         = 1000;
-    $bank_balance += $money;
+    const ENGLISH = 0;
+    const SPANISH = 1;
+    const FRENCH  = 2;
+    const GERMAN  = 3;
+    // ...
+
+    static function lookup()
+    {
+      echo self::SPANISH;
+    }
   }
 ?>

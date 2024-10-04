@@ -1,7 +1,9 @@
 <?php
-  $a = "1000";
-  $b = "+1000";
-
-  if ($a != $b)  echo "1";
-  if ($a !== $b) echo "2";
+  class User
+  {
+      function __construct($param1, $param2)
+    {
+      // Constructor statements go here
+    }
+  }
 ?>

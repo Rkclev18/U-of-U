@@ -1,12 +1,13 @@
 <?php
-  if ($bank_balance < 100)
+  class Example
   {
-    $money         = 1000;
-    $bank_balance += $money;
-  }
-  else
-  {
-    $savings      += 50;
-    $bank_balance -= 50;
+    var $name = "Michael";   // Same as public but deprecated
+    public $age = 23;        // Public property
+    protected $usercount;    // Protected property
+
+    private function admin() // Private method
+    {
+      // Admin code goes here
+    }
   }
 ?>

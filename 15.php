@@ -1,7 +1,9 @@
 <?php
-  $a = 2; $b = 3;
-  if ($a > $b)  echo "$a is greater than $b<br>";
-  if ($a < $b)  echo "$a is less than $b<br>";
-  if ($a >= $b) echo "$a is greater than or equal to $b<br>";
-  if ($a <= $b) echo "$a is less than or equal to $b<br>";
+  class Test
+  {
+    public $name = "Paul Smith"; // Valid
+    public $age = 42; // Valid
+    public $time = time(); // Invalid - calls a function
+    public $score = $level * 2; // Invalid - uses an expression
+  }
 ?>

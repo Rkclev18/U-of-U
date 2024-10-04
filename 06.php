@@ -1,8 +1,6 @@
 <?php
-  $author = "Steve Ballmer";
+  include("library.php");
 
-  echo "Developers, Developers, developers, developers, developers,
-  developers, developers, developers, developers!
-
-  - $author.";
+  // Your code goes here
 ?>
+

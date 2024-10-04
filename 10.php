@@ -1,4 +1,14 @@
 <?php
-  $number = 12345 * 67890;
-  echo substr($number, 3, 1);
+  $object = new User;
+  print_r($object);
+
+  class User
+  {
+    public $name, $password;
+
+    function save_user()
+    {
+  	  echo "Save User code goes here";
+    }
+  }
 ?>

@@ -1,23 +1,26 @@
 <?php
-switch ($page)
-{
-	case "Home":
-	    echo "You selected Home";
-		break;
-	case "About":
-	    echo "You selected About";
-		break;
-	case "News":
-	    echo "You selected News";
-		break;
-	case "Login":
-	    echo "You selected Login";
-		break;
-	case "Links":
-	    echo "You selected Links";
-		break;
-	default:
-	    echo "Unrecognized selection";
-		break;
-}
+  $object = new Son;
+  $object->test();
+  $object->test2();
+
+  class Dad
+  {
+    function test()
+    {
+      echo "[Class Dad] I am your Father<br>";
+    }
+  }
+
+  class Son extends Dad
+  {
+    function test()
+    {
+      echo "[Class Son] I am Luke<br>";
+    }
+
+    function test2()
+    {
+      parent::test();
+    }
+  }
 ?>

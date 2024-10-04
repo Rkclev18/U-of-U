@@ -1,7 +1,14 @@
 <?php
-  $a = "1000";
-  $b = "+1000";
+  $object1 = new User();
+  $object1->name = "Alice";
+  $object2 = clone $object1;
+  $object2->name = "Amy";
 
-  if ($a == $b)  echo "1";
-  if ($a === $b) echo "2";
+  echo "object1 name = " . $object1->name . "<br>";
+  echo "object2 name = " . $object2->name;
+  
+  class User
+  {
+    public $name;
+  }
 ?>

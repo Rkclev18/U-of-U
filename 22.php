@@ -1,10 +1,17 @@
 <?php
-  $page = "test";
+  $temp = new Test();
 
-  if     ($page == "Home")  echo "You selected Home";
-  elseif ($page == "About") echo "You selected About";
-  elseif ($page == "News")  echo "You selected News";
-  elseif ($page == "Login") echo "You selected Login";
-  elseif ($page == "Links") echo "You selected Links";
-  else                      echo "Unrecognized selection";
+  echo "Test A: " . Test::$static_property . "<br>";
+  echo "Test B: " . $temp->get_sp()        . "<br>";
+  echo "Test C: " . $temp->static_property . "<br>";
+
+  class Test
+  {
+    static $static_property = "I'm static";
+    function get_sp()
+
+    {
+      return self::$static_property;
+    }
+  }
 ?>

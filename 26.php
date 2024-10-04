@@ -1,3 +1,9 @@
 <?php
-  echo $fuel <= 1 ? "Fill tank now" : "There's enough fuel";
+  class User
+  {
+    final function copyright()
+    {
+      echo "This class was written by Joe Smith";
+    }
+  }
 ?>

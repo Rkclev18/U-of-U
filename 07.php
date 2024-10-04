@@ -1,10 +1,7 @@
 <?php
-  $author = "Bill Gates";
+  include_once("library.php");
 
-  $text = "Measuring programming progress by lines of code is like
-  Measuring aircraft building progress by weight.
-
-  - $author.";
-
-  echo $text;
+  // Your code goes here
 ?>
+
+

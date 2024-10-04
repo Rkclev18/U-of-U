@@ -1,6 +1,5 @@
 <?php
-  echo "a: [" . (20 > 9) . "]<br>";
-  echo "b: [" . (5 == 6) . "]<br>";
-  echo "c: [" . (1 == 0) . "]<br>";
-  echo "d: [" . (1 == 1) . "]<br>";
+  echo strrev(" .dlrow olleH"); // Reverse string
+  echo str_repeat("Hip ", 2);   // Repeat string
+  echo strtoupper("hooray!");   // String to upper case
 ?>

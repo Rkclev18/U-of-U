@@ -1,3 +1,8 @@
 <?php
-  if ($finished == 1 or getnext() == 1) exit;
+  $object1       = new User();
+  $object1->name = "Alice";
+
+  echo $object1->name;
+
+  class User {}
 ?>
