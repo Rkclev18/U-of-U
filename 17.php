@@ -1,13 +1,3 @@
 <?php
-
-  echo test();
-  echo "<br><br>";
-  echo test();
-    
-  function test()
-  {
-    static $count = 0;
-    echo $count;
-    $count++;
-  }
+  if ($finished == 1 or getnext() == 1) exit;
 ?>
