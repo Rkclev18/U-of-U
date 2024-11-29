@@ -1,7 +1,9 @@
 <?php
-  include_once("library.php");
+  $paper = array('copier' => "Copier & Multipurpose",
+                 'inkjet' => "Inkjet Printer",
+                 'laser'  => "Laser Printer",
+                 'photo'  => "Photographic Paper");
 
-  // Your code goes here
+  foreach($paper as $item => $description)
+    echo "$item: $description<br>";
 ?>
-
-

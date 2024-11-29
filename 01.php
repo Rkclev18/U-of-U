@@ -1,5 +1,8 @@
 <?php
-  echo strrev(" .dlrow olleH"); // Reverse string
-  echo str_repeat("Hip ", 2);   // Repeat string
-  echo strtoupper("hooray!");   // String to upper case
+  $paper[] = "Copier";
+  $paper[] = "Inkjet";
+  $paper[] = "Laser";
+  $paper[] = "Photo";
+
+  print_r($paper);
 ?>
