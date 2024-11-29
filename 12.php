@@ -1,14 +1,14 @@
 <?php
-  $object1 = new User();
-  $object1->name = "Alice";
-  $object2 = $object1;
-  $object2->name = "Amy";
+  $fh = fopen("testfile.txt", 'r+') or die("Failed to open file");
+  $text = fgets($fh);
 
-  echo "object1 name = " . $object1->name . "<br>";
-  echo "object2 name = " . $object2->name;
-  
-  class User
+  if (flock($fh, LOCK_EX))
   {
-    public $name;
+    fseek($fh, 0, SEEK_END);
+    fwrite($fh, "$text") or die("Could not write to file");
+    flock($fh, LOCK_UN);
   }
+
+  fclose($fh);
+  echo "File 'testfile.txt' successfully updated";
 ?>

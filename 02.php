@@ -1,12 +1,17 @@
 <?php
-  echo fix_names("WILLIAM", "henry", "gatES");
+  echo "<pre>"; // Enables viewing of the spaces
 
-  function fix_names($n1, $n2, $n3)
-  {
-    $n1 = ucfirst(strtolower($n1));
-    $n2 = ucfirst(strtolower($n2));
-    $n3 = ucfirst(strtolower($n3));
+  $h = 'Rasmus';
 
-    return $n1 . " " . $n2 . " " . $n3;
-  }
+  printf("[%s]\n",        $h); // Standard string output
+  printf("[%12s]\n",      $h); // Right justify with spaces
+  printf("[%-12s]\n",     $h); // Left justify with spaces
+  printf("[%012s]\n",     $h); // Zero padding
+  printf("[%'#12s]\n\n",  $h); // Use the custom padding character '#'
+
+  $d = 'Rasmus Lerdorf';
+
+  printf("[%12.8s]\n",    $d); // Right justify, cutoff of 8 characters
+  printf("[%-12.12s]\n",   $d); // Left justify, cutoff of 12 characters
+  printf("[%-'@12.10s]\n", $d); // Left justify, pad '@', cutoff 10 chars
 ?>

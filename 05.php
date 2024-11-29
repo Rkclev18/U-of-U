@@ -1,16 +1,8 @@
 <?php
-  $a1 = "WILLIAM";
-  $a2 = "henry";
-  $a3 = "gatES";
+  $fh = fopen("testfile.txt", 'r') or              
+    die("File does not exist or you lack permission to open it");
 
-  echo $a1 . " " . $a2 . " " . $a3 . "<br>";
-  fix_names();
-  echo $a1 . " " . $a2 . " " . $a3;
-
-  function fix_names()
-  {
-    global $a1; $a1 = ucfirst(strtolower($a1));
-    global $a2; $a2 = ucfirst(strtolower($a2));
-    global $a3; $a3 = ucfirst(strtolower($a3));
-  }
+  $line = fgets($fh);
+  fclose($fh);
+  echo $line;
 ?>

@@ -1,9 +1,3 @@
 <?php
-  class User
-  {
-      function __construct($param1, $param2)
-    {
-      // Constructor statements go here
-    }
-  }
+  echo file_get_contents("http://oreilly.com");
 ?>

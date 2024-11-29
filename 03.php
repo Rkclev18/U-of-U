@@ -1,13 +1,8 @@
 <?php
-  $names = fix_names("WILLIAM", "henry", "gatES");
-  echo $names[0] . " " . $names[1] . " " . $names[2];
+  $month = 9;    // September (only has 30 days)
+  $day   = 31;   // 31st
+  $year  = 2018; // 2018
 
-  function fix_names($n1, $n2, $n3)
-  {
-    $n1 = ucfirst(strtolower($n1));
-    $n2 = ucfirst(strtolower($n2));
-    $n3 = ucfirst(strtolower($n3));
-
-    return array($n1, $n2, $n3);
-  }
+  if (checkdate($month, $day, $year)) echo "Date is valid";
+  else echo "Date is invalid";
 ?>

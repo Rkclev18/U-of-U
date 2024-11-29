@@ -7,5 +7,4 @@
   fclose($fh);
 
   echo "File 'testfile.txt' successfully updated";
-
 ?>

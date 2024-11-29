@@ -11,4 +11,3 @@ _END;
   fclose($fh);
   echo "File 'testfile.txt' written successfully";
 ?>
-
