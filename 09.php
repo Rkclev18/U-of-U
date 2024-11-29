@@ -1,10 +1,17 @@
 <?php
-  if (function_exists("array_combine"))
+  function sanitizeString($var)
   {
-    echo "Function exists";
+    if (get_magic_quotes_gpc())
+      $var = stripslashes($var);
+    $var = strip_tags($var);
+    $var = htmlentities($var);
+    return $var;
   }
-  else
+
+  function sanitizeMySQL($pdo, $var)
   {
-    echo "Function does not exist - better write our own";
+    $var = $pdo->quote($var);
+    $var = sanitizeString($var);
+    return $var;
   }
 ?>
