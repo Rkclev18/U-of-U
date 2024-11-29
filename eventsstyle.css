@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+button {
+    background-color: #D50032;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+add-team-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #D50032;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+button-container {
+    display: flex;
+    justify-content: flex-end;
+	margin-bottom: 10px;
+}
+
+button-container button,
+button-container a {
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
