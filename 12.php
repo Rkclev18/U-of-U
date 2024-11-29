@@ -1,14 +1,17 @@
-<?php
-  $object1 = new User();
-  $object1->name = "Alice";
-  $object2 = $object1;
-  $object2->name = "Amy";
+<?php // Example 12: logout.php
+  require_once 'header.php';
 
-  echo "object1 name = " . $object1->name . "<br>";
-  echo "object2 name = " . $object2->name;
-  
-  class User
+  if (isset($_SESSION['user']))
   {
-    public $name;
+    destroySession();
+    echo "<br><div class='center'>You have been logged out. Please
+         <a data-transition='slide'
+           href='index.php?r=$randstr'>click here</a>
+           to refresh the screen.</div>";
   }
+  else echo "<div class='center'>You cannot log out because
+             you are not logged in</div>";
 ?>
+    </div>
+  </body>
+</html>

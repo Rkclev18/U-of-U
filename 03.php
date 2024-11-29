@@ -1,13 +1,41 @@
+<!DOCTYPE html> <!-- Example 03: setup.php -->
+<html>
+  <head>
+    <title>Setting up database</title>
+  </head>
+  <body>
+    <h3>Setting up...</h3>
+
 <?php
-  $names = fix_names("WILLIAM", "henry", "gatES");
-  echo $names[0] . " " . $names[1] . " " . $names[2];
+  require_once 'functions.php';
 
-  function fix_names($n1, $n2, $n3)
-  {
-    $n1 = ucfirst(strtolower($n1));
-    $n2 = ucfirst(strtolower($n2));
-    $n3 = ucfirst(strtolower($n3));
+  createTable('members',
+              'user VARCHAR(16),
+              pass VARCHAR(16),
+              INDEX(user(6))');
 
-    return array($n1, $n2, $n3);
-  }
+  createTable('messages', 
+              'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+              auth VARCHAR(16),
+              recip VARCHAR(16),
+              pm CHAR(1),
+              time INT UNSIGNED,
+              message VARCHAR(4096),
+              INDEX(auth(6)),
+              INDEX(recip(6))');
+
+  createTable('friends',
+              'user VARCHAR(16),
+              friend VARCHAR(16),
+              INDEX(user(6)),
+              INDEX(friend(6))');
+
+  createTable('profiles',
+              'user VARCHAR(16),
+              text VARCHAR(4096),
+              INDEX(user(6))');
 ?>
+
+    <br>...done.
+  </body>
+</html>

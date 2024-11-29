@@ -1,16 +1,20 @@
-<?php
-  $a1 = "WILLIAM";
-  $a2 = "henry";
-  $a3 = "gatES";
+<?php // Example 04: index.php
+  session_start();
+  require_once 'header.php';
 
-  echo $a1 . " " . $a2 . " " . $a3 . "<br>";
-  fix_names($a1, $a2, $a3);
-  echo $a1 . " " . $a2 . " " . $a3;
+  echo "<div class='center'>Welcome to Robin's Nest,";
 
-  function fix_names(&$n1, &$n2, &$n3)
-  {
-    $n1 = ucfirst(strtolower($n1));
-    $n2 = ucfirst(strtolower($n2));
-    $n3 = ucfirst(strtolower($n3));
-  }
+  if ($loggedin) echo " $user, you are logged in";
+  else           echo ' please sign up or log in';
+
+  echo <<<_END
+      </div><br>
+    </div>
+    <div data-role="footer">
+      <h4>Web App from <i><a href='https://github.com/RobinNixon/lpmj6'
+      target='_blank'>Learning PHP MySQL & JavaScript</a></i></h4>
+    </div>
+  </body>
+</html>
+_END;
 ?>
