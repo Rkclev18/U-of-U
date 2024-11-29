@@ -1,12 +1,19 @@
 <?php
-  echo fix_names("WILLIAM", "henry", "gatES");
+  $username = 'admin';
+  $password = 'letmein';
 
-  function fix_names($n1, $n2, $n3)
+  if (isset($_SERVER['PHP_AUTH_USER']) &&
+      isset($_SERVER['PHP_AUTH_PW']))
   {
-    $n1 = ucfirst(strtolower($n1));
-    $n2 = ucfirst(strtolower($n2));
-    $n3 = ucfirst(strtolower($n3));
-
-    return $n1 . " " . $n2 . " " . $n3;
+    if ($_SERVER['PHP_AUTH_USER'] === $username &&
+        $_SERVER['PHP_AUTH_PW']   === $password)
+          echo "You are now logged in";
+    else die("Invalid username/password combination");
+  }
+  else
+  {
+    header('WWW-Authenticate: Basic realm="Restricted Area"');
+    header('HTTP/1.0 401 Unauthorized');
+    die ("Please enter your username and password");
   }
 ?>

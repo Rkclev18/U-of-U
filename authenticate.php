@@ -27,8 +27,7 @@
     $pw  = $row['password'];
       
     if (password_verify(str_replace("'", "", $pw_temp), $pw))
-      echo htmlspecialchars("$fn $sn : Hi $fn,
-        you are now logged in as '$un'");
+      echo htmlspecialchars("$fn $sn : Hi $fn, you are now logged in as '$un'");
     else die("Invalid username/password combination");
   }
   else

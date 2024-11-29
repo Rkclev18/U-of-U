@@ -1,14 +1,14 @@
 <?php
-  $object = new User;
-  print_r($object);
+  session_start();
 
-  class User
+  if (!isset($_SESSION['initiated']))
   {
-    public $name, $password;
-
-    function save_user()
-    {
-  	  echo "Save User code goes here";
-    }
+    session_regenerate_id();
+    $_SESSION['initiated'] = 1; 
   }
+
+  if (!isset($_SESSION['count'])) $_SESSION['count'] = 0; 
+  else ++$_SESSION['count'];
+
+  echo $_SESSION['count'];
 ?>
