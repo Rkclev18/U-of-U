@@ -1,10 +1,4 @@
 <?php
-  if (function_exists("array_combine"))
-  {
-    echo "Function exists";
-  }
-  else
-  {
-    echo "Function does not exist - better write our own";
-  }
+  list($a, $b) = array('Alice', 'Bob');
+  echo "a=$a b=$b";
 ?>

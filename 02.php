@@ -1,12 +1,8 @@
 <?php
-  echo fix_names("WILLIAM", "henry", "gatES");
+  $paper[0] = "Copier";
+  $paper[1] = "Inkjet";
+  $paper[2] = "Laser";
+  $paper[3] = "Photo";
 
-  function fix_names($n1, $n2, $n3)
-  {
-    $n1 = ucfirst(strtolower($n1));
-    $n2 = ucfirst(strtolower($n2));
-    $n3 = ucfirst(strtolower($n3));
-
-    return $n1 . " " . $n2 . " " . $n3;
-  }
+  print_r($paper);
 ?>

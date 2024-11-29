@@ -1,6 +1,10 @@
 <?php
-  include("library.php");
+  $paper = array("Copier", "Inkjet", "Laser", "Photo");
+  $j = 0;
 
-  // Your code goes here
+  foreach($paper as $item)
+  {
+    echo "$j: $item<br>";
+    ++$j;
+  }
 ?>
-

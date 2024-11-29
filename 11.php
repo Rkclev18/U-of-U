@@ -1,20 +1,28 @@
 <?php
-  $object = new User;
-  print_r($object); echo "<br>";
 
-  $object->name = "Joe";
-  $object->password = "mypass";
-  print_r($object); echo "<br>";
+// This example is corrected from the one in the book,
+// which had two extra blank rows in the center.
 
-  $object->save_user();
+$chessboard = array(
+	array('r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'),
+	array('p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'),
+	array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+	array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+	array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+	array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+	array('P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'),
+	array('R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R')
+  );
 
-  class User
+  echo "<pre>";
+
+  foreach($chessboard as $row)
   {
-    public $name, $password;
+    foreach ($row as $piece)
+      echo "$piece ";
 
-    function save_user()
-    {
-  	  echo "Save User code goes here";
-    }
+    echo "<br>";
   }
+
+  echo "</pre>";
 ?>
