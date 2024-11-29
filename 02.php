@@ -1,12 +1,12 @@
 <?php
-  echo fix_names("WILLIAM", "henry", "gatES");
+  require_once 'login.php';
 
-  function fix_names($n1, $n2, $n3)
+  try
   {
-    $n1 = ucfirst(strtolower($n1));
-    $n2 = ucfirst(strtolower($n2));
-    $n3 = ucfirst(strtolower($n3));
-
-    return $n1 . " " . $n2 . " " . $n3;
+    $pdo = new PDO($attr, $user, $pass, $opts);
+  }
+  catch (PDOException $e)
+  {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
   }
 ?>

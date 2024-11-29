@@ -1,13 +1,12 @@
 <?php
-  class Example
+  function mysql_entities_fix_string($pdo, $string)
   {
-    var $name = "Michael";   // Same as public but deprecated
-    public $age = 23;        // Public property
-    protected $usercount;    // Protected property
+    return htmlentities(mysql_fix_string($pdo, $string));
+  }    
 
-    private function admin() // Private method
-    {
-      // Admin code goes here
-    }
+  function mysql_fix_string($pdo, $string)
+  {
+    if (get_magic_quotes_gpc()) $string = stripslashes($string);
+    return $pdo->quote($string);
   }
 ?>

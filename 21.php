@@ -1,11 +1,29 @@
 <?php
-  User::pwd_string();
+  require_once 'login.php';
 
-  class User
+  try
   {
-    static function pwd_string()
-    {
-      echo "Please enter your password";
-    }
+    $pdo = new PDO($attr, $user, $pass, $opts);
+  }
+  catch (PDOException $e)
+  {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
+  }
+
+  $user  = mysql_entities_fix_string($pdo, $_POST['user']);
+  $pass  = mysql_entities_fix_string($pdo, $_POST['pass']);
+  $query = "SELECT * FROM users WHERE user=$user AND pass=$pass";
+
+  //Etc…
+
+  function mysql_entities_fix_string($pdo, $string)
+  {
+    return htmlentities(mysql_fix_string($pdo, $string));
+  }    
+
+  function mysql_fix_string($pdo, $string)
+  {
+    if (get_magic_quotes_gpc()) $string = stripslashes($string);
+    return $pdo->quote($string);
   }
 ?>

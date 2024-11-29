@@ -1,9 +1,17 @@
 <?php
-  class User
+  require_once 'login.php';
+
+  try
   {
-      function __construct($param1, $param2)
-    {
-      // Constructor statements go here
-    }
+    $pdo = new PDO($attr, $user, $pass, $opts);
   }
+  catch (PDOException $e)
+  {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
+  }
+  
+  $query  = "INSERT INTO cats VALUES(NULL, 'Lynx', 'Stumpy', 5)";
+  $result = $pdo->query($query);
+
+  echo "The Insert ID was: " . $pdo->lastInsertId();
 ?>

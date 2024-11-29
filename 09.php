@@ -1,10 +1,15 @@
 <?php
-  if (function_exists("array_combine"))
+  require_once 'login.php';
+
+  try
   {
-    echo "Function exists";
+    $pdo = new PDO($attr, $user, $pass, $opts);
   }
-  else
+  catch (PDOException $e)
   {
-    echo "Function does not exist - better write our own";
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
   }
+
+  $query  = "DROP TABLE cats";
+  $result = $pdo->query($query);
 ?>

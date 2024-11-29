@@ -1,14 +1,15 @@
 <?php
-  $object1 = new User();
-  $object1->name = "Alice";
-  $object2 = $object1;
-  $object2->name = "Amy";
+  require_once 'login.php';
 
-  echo "object1 name = " . $object1->name . "<br>";
-  echo "object2 name = " . $object2->name;
-  
-  class User
+  try
   {
-    public $name;
+    $pdo = new PDO($attr, $user, $pass, $opts);
   }
+  catch (PDOException $e)
+  {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
+  }
+
+  $query  = "UPDATE cats SET name='Charlie' WHERE name='Charly'";
+  $result = $pdo->query($query);
 ?>
