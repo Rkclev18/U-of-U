@@ -20,4 +20,3 @@ print("Welcome to the Quiz Maker! Please select an option below")
 start_quiz()
 
 
-test
